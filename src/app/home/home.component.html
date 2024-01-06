@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <ng-container *ngIf="photos$ | async as photos">
+        <app-photo-list [photos]="photos"></app-photo-list>
+        
+        <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon" (click)="startSlider()">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+
+        <ng-container *ngIf="showSlideShow">
+            <app-slideshow [photos]="photos"></app-slideshow>
+        </ng-container>
+    </ng-container>
+
+</div>
